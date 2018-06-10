@@ -3,3 +3,249 @@
 @import "./imports/_grid.less";
 @import "./imports/_variables.less";
 @import "./imports/_fonts.less";
+
+body, html {
+  font-family: "Exo 2"
+}
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    &--logo {
+      
+    }
+    &--callback {
+
+    }
+  }
+}
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  font-size: 0;
+  cursor:pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    background-image: url('../img/logo.png'), linear-gradient(251deg, #f46e34 0%, #ff9a2f 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+  }
+}
+
+.btn {
+  display: block;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 14px rgba(243, 243, 243, 0.5);
+  border-radius: 16px;
+
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--orange {
+    background-image: linear-gradient(73deg, #ff9930 0%, #f46f34 100%);
+  }
+}
+
+.nav {
+  display: none;
+  &__list {
+    
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    color: @text;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+
+  }
+}
+
+.navbar-toggler {
+  height:40px;
+  width: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background-image: linear-gradient(251deg, #f46e34 0%, #ff9a2f 100%);
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  span {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: #ffffff;
+    margin-bottom: 3px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.callback {
+  text-align: right;
+  &__phone {
+    color: @text;
+    font-family: "Exo 2";
+    font-size: 18px;
+    font-weight: 400;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    margin-bottom: 5px;
+    span {
+      color:@text-orange;
+    }
+
+  }
+
+  &__btn {
+
+  }
+
+  &__info {
+
+  }
+
+  &__link {
+    color: @text;
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+
+
+
+
+
+.page {
+  &__title {
+    color: @text-orange;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+    margin-bottom: 30px;
+  }
+}
+
+
+.promo {
+  &__item {
+    position: relative;
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 14px rgba(243, 243, 243, 0.5);
+    background-color: #ffffff;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    max-width: 300px;
+    max-height: 300px;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 20px;
+    color: @text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &__img {
+    display: block;
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    z-index: 1;
+
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+  }
+  
+}
+
+
+.advantages {
+
+  &__item {
+    position: relative;
+    color: @text;
+    font-size: 18px;
+    line-height: 32px;
+
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-weight: 700;
+    padding-left: 65px;
+    margin-bottom: 20px;
+    line-height: 50px;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ffffff;
+      background-color: #fe982f;
+
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+  }
+}

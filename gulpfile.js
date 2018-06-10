@@ -4,7 +4,10 @@
   * Description: default gulpfile.js for most typical projects
   *
 */
+
+
 var gulp = require('gulp'),
+  pug = require('gulp-pug'),
   less = require('gulp-less'),
   postcss = require('gulp-postcss'),
   mqpacker = require('css-mqpacker'),
@@ -77,8 +80,23 @@ gulp.task('html', function() {
       indent: true,
     }))
     .pipe(gulp.dest('./docs/'))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({
+      stream: true}
+    ));
 });
+
+// Pug
+gulp.task('pug', function () {
+  return gulp.src('./src/pug/*.pug')
+  .pipe(pug({
+      pretty: true
+  }))
+  .pipe(gulp.dest('./docs/'))           
+  .pipe(browserSync.reload({
+      stream: true              
+  }));
+});
+
 
 // Оптимизация изображений
 gulp.task('img', function() {
@@ -101,9 +119,10 @@ gulp.task('browser-sync', function() {
 });
 
 // LiveReload
-gulp.task('watch', ['browser-sync', 'less'], function() {
+gulp.task('watch', ['browser-sync','pug','less','js'], function() {
   gulp.watch('src/less/**/*.less', ['less']); // Наблюдение за less файлами
-  gulp.watch('src/**/*.html', ['html']); // Наблюдение за HTML файлами в проекте
+  gulp.watch('src/pug/**/*.pug', ['pug']); // Наблюдение за HTML файлами в проекте
+  gulp.watch('src/**/*.html', ['html']); // Наблюдение за PUG файлами в проекте
   gulp.watch('src/js/*.js', ['js']); // Наблюдение за JS файлами в папке js
   gulp.watch('src/img/*', ['img']); // Наблюдение за JS файлами в папке js
 });
