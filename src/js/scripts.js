@@ -35,11 +35,7 @@ $(function (){
     $select.removeClass('select--active');
   });
 
-
-  
-  
   var slideoutBtn = document.querySelector('.navbar-toggler');
-
   var slideout = new Slideout({
     'panel': document.getElementById('panel'),
     'menu': document.getElementById('navbar'),
@@ -51,15 +47,8 @@ $(function (){
 
   });
 
-
   // Toggle button
   slideoutBtn.addEventListener('click', function() {
     slideout.toggle();
   });
-
-  
-
 });
-
-
-
