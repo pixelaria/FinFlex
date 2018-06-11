@@ -408,6 +408,7 @@ h1,h2,h3,h4,p {
   }
 
   &__placeholder {
+    position: relative;
     height: 44px;
     border: 1px solid #afafaf;
     line-height: 44px;
@@ -415,9 +416,26 @@ h1,h2,h3,h4,p {
     padding-left: 20px;
     padding-right: 40px;
 
-    color: @text;
+    color: @text-light;
     font-size: 18px;
     font-weight: 400;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 0px;
+      bottom: 0;
+      margin: auto;
+      width: 16px;
+      height: 8px;
+
+      background-image: url('../img/icon-down.png');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
   }
 
