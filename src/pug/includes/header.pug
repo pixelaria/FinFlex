@@ -1,0 +1,21 @@
+header.header
+  .container.header__items 
+    .header__item.header__item--logo.logo
+      | Финфлекс
+    nav.header__item.header__item--menu.nav
+      ul.nav__list
+        each val, index in ['Пленка', 'Мешки и пакеты', 'Флексопечать', 'О компании']
+          li.nav__item
+            a.nav__link(href='#')=val
+    .header__item.header__item--callback
+      .callback
+        a.callback__phone(href='tel:+78126003214') <span>+7 (812)</span> 600-32-14
+        .callback__btn
+        .callback__info
+          a.callback__link(href='mailto:sales@finfleks.ru') sales@finfleks.ru
+          a.callback__link.callback__link--vk(href='#')
+          a.callback__link.callback__link--youtube(href='#')
+    .navbar-toggler
+      span
+      span
+      span

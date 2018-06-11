@@ -1,0 +1,10 @@
+//- Declaration
+mixin select(name, ...items)
+  .select
+    input.select__input(name=name type="hidden")
+    .select__placeholder= items[0]
+    .select__inner
+      each item in items
+        .select__item(data-value=item )= item
+      
+
