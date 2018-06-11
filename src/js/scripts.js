@@ -34,6 +34,31 @@ $(function (){
     $placehoder.html(text);
     $select.removeClass('select--active');
   });
+
+
+  
+  
+  var slideoutBtn = document.querySelector('.navbar-toggler');
+
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('navbar'),
+    'padding': 220,
+    'tolerance': 70,
+    'side': 'right',
+    'tolerance': 70,
+    'touch': false
+
+  });
+
+
+  // Toggle button
+  slideoutBtn.addEventListener('click', function() {
+    slideout.toggle();
+  });
+
+  
+
 });
 
 
