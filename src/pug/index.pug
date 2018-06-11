@@ -36,8 +36,20 @@ body
                   +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
                 .form__field.input-group
                   label.input-group__label Тип пленки: 
+                  +radio('name','Полурукав','Рукав')
                 .form__field.input-group
                   label.input-group__label Длина, Ширина, Толщина: 
+                  .input-group__group
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc мм
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
+
               .form__fields.form__fields--info
                 .form__field.input-group
                   input.input-group__input(name="name" placeholder="Ваше имя")
@@ -46,7 +58,6 @@ body
                 a.form__btn.btn.btn--orange Рассчитать
                 p.form__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с
                   a.link.link--light(href='#') политикой конфиденциальности 
-
 
     section.section.section--advantages
       .container

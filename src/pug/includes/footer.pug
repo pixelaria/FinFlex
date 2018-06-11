@@ -1,5 +1,18 @@
 footer.footer
   .container
+    .footer__links
+      +list('','list__link--footer','Главная', 'Плёнка', 'Мешки и пакеты', 'Флексопечать', 'О компании', 'Контакты', 'Новости', 'Условия работы')
+      
+      ul.list.list--inline
+        li.list__item
+          a.list__link.list__link--footer(href="tel:+74952680749") +7 (495) 268 0749
+        li.list__item пн-пт. 9:00-18:00
+    .footer__copyright
+      ul.list
+        li.list__item © 2017-2018  ООО «Финфлекс»   
+        li.list__item Политика конфиденциальности
+      .develop
+        <span>Разработано в </span> <a href="http://pixelaria.ru" target="_blank" class="develop__link">Pixelaria</a>
 
 script(src='./js/libs.min.js')
 script(src='./js/bundle.js')

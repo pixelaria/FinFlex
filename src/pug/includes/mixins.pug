@@ -3,8 +3,20 @@ mixin select(name, ...items)
   .select
     input.select__input(name=name type="hidden")
     .select__placeholder= items[0]
-    .select__inner
+    .select__items
       each item in items
         .select__item(data-value=item )= item
       
+//- Declaration
+mixin radio(name, ...items)
+  .radio
+    input.radio__input(name=name type="hidden")
+    .radio__items
+      each item in items
+       .radio__item(data-value=item )= item
 
+mixin list(item_class,link_class, ...items)
+  ul.list
+    each item in items
+      li.list__item
+        a.list__link(href="#" class= link_class)= item
