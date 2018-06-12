@@ -26,40 +26,38 @@ body
             .section__part
               h2.section__title.section__title--white Рассчитайте стоимость вашего заказа
               p.section__text.section__text--white Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi Ipsam voluptatem quia voluptas sit aspernatur aut
-              p.section__text.section__text--white Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. et quasi Ipsam voluptatem quia voluptas sit aspernatur aut 
-            .section__part
-              .form
-                .form__fields
-                  .form__field.input-group
-                    label.input-group__label Вид продукции: 
-                    +select('name','Полиэтиленовая плёнка','Полиэтиленовая плёнка','Полиэтиленовая плёнка')
-                  .form__field.input-group
-                    label.input-group__label Вид пленки: 
-                    +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
-                  .form__field.input-group
-                    label.input-group__label Тип пленки: 
-                    +radio('name','Полурукав','Рукав')
-                  .form__field.input-group
-                    label.input-group__label Длина, Ширина, Толщина: 
-                    .input-group__group
-                      .input-group__box
-                        input.input-group__input
-                        .input-group__desc м
-                      .input-group__box
-                        input.input-group__input
-                        .input-group__desc мм
-                      .input-group__box
-                        input.input-group__input
-                        .input-group__desc м
+            .section__part.form
+              .form__fields
+                .form__field.form__field--90.input-group
+                  label.input-group__label Вид продукции: 
+                  +select('name','Полиэтиленовая плёнка','Полиэтиленовая плёнка','Полиэтиленовая плёнка')
+                .form__field.form__field--90.input-group
+                  label.input-group__label Вид пленки: 
+                  +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
+                .form__field.form__field--75.input-group
+                  label.input-group__label Тип пленки: 
+                  +radio('name','Полурукав','Рукав')
+                .form__field.input-group.input-group--start
+                  label.input-group__label Длина, Ширина, Толщина: 
+                  .input-group__group
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc мм
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
 
-                .form__fields.form__fields--info
-                  .form__field.input-group
-                    input.input-group__input(name="name" placeholder="Ваше имя")
-                    input.input-group__input.im--phone(name="phone" placeholder="Ваш телефон")
-                .form__buttons
-                  a.form__btn.btn.btn--orange Рассчитать
-                  p.form__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с
-                    a.link.link--light(href='#') политикой конфиденциальности 
+              .form__fields.form__fields--info
+                .form__field.input-group
+                  input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
+                  input.input-group__input.im--phone.input-group__input--phone(name="phone" placeholder="Телефон")
+              .form__buttons
+                a.form__btn.btn.btn--orange Рассчитать
+                p.form__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с
+                  a.link.link--light(href='#') политикой конфиденциальности 
 
       section.section.section--advantages
         .container
