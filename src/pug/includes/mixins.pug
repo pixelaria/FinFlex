@@ -15,8 +15,8 @@ mixin radio(name, ...items)
       each item in items
        .radio__item(data-value=item )= item
 
-mixin list(item_class,link_class, ...items)
-  ul.list
+mixin list(list_class,item_class,link_class, ...items)
+  ul.list(class= list_class)
     each item in items
       li.list__item
         a.list__link(href="#" class= link_class)= item

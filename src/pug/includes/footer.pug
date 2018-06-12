@@ -2,14 +2,14 @@ footer.footer
   .container
     .footer__car
     .footer__links
-      +list('','list__link--footer','Главная', 'Плёнка', 'Мешки и пакеты', 'Флексопечать', 'О компании', 'Контакты', 'Новости', 'Условия работы')
+      +list('list--footer','','Главная', 'Плёнка', 'Мешки и пакеты', 'Флексопечать', 'О компании', 'Контакты', 'Новости', 'Условия работы')
       
-      ul.list.list--inline
+      ul.list.list--footer
         li.list__item
-          a.list__link.list__link--footer(href="tel:+74952680749") +7 (495) 268 0749
+          a.list__link(href="tel:+74952680749") +7 (495) 268 0749
         li.list__item пн-пт. 9:00-18:00
     .footer__copyright
-      ul.list
+      ul.list.list--footer
         li.list__item © 2017-2018  ООО «Финфлекс»   
         li.list__item Политика конфиденциальности
       .develop
