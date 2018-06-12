@@ -26,13 +26,12 @@ $(function (){
     var val = $(this).data('value');
     var text = $(this).html();
     
-    var $select = $(this).closest('.select');
-    var $input = $select.find('.select__input');
-    var $placehoder = $select.find('.select__placeholder');
-
+    var $radio = $(this).closest('.radio');
+    var $input = $radio.find('.radio__input');
+    
     $input.val(val);
-    $placehoder.html(text);
-    $select.removeClass('select--active');
+    $radio.find('.radio__item').removeClass('radio__item--active');
+    $(this).addClass('radio__item--active');
   });
 
   var slideoutBtn = document.querySelector('.navbar-toggler');
