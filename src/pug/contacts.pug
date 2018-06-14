@@ -9,7 +9,7 @@ body
   .wrapper#panel
     include includes/header.pug
     main.main
-      section.section.section--page
+      section.section.section--page.section--contacts
         .container
           +breadcrumbs('Контакты', 'Главная')
           h1.page__title Контакты
@@ -102,8 +102,10 @@ body
             h2.form__title Завершающее предложение
             p.form__text Призыв оставить контактные данные, например, чтобы связаться со специалистом для консультации
             .form__fields
-              input.input-group__input
-              input.input-group__input
+              .input-group
+                input.input-group__input(placeholder="Ваше имя")
+              .input-group
+                input.input-group__input(placeholder="E-mail")
             a.form__btn.btn.btn--orange(href="#") Подписаться
 
 
