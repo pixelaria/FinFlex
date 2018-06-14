@@ -1,0 +1,105 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+
+include includes/head.pug
+
+body
+  include includes/aside.pug
+  .wrapper#panel
+    include includes/header.pug
+    main.main
+      section.section.section--page
+        .container
+          +breadcrumbs('Контакты', 'Главная')
+          h1.page__title Контакты
+          
+          .contacts
+            .contacts__item
+              .contacts__title.contacts__title--pin Адрес
+              .contacts__text 
+                span.contacts__type Производство и офис: 
+                span.contacts__value Лен. область, Гатчинский район, п. Терволово, Ленинградская, 15
+            .contacts__item
+              .contacts__title.contacts__title--msg Телефоны, e-mail
+              .contacts__text 
+                span.contacts__type Отдел продаж:
+                span.contacts__value +7 (812) 600-32-14, sales@finfleks.ru
+              .contacts__text 
+                span.contacts__type Ген. директор: 
+                span.contacts__value Ролле Евгений Леонидович, +7 (921) 758-99-31,  tek59@yandex.ru
+              .contacts__text 
+                span.contacts__type Зам. ген. директора: 
+                span.contacts__value Тихонова Анастасия Ивановна, +7 (812) 493 44 08,  +7 (921) 413-83-02 (моб.), anastasiya@finflex.ru 
+            .contacts__item
+              .contacts__title.contacts__title--clock Режим работы 
+              .contacts__text 
+                span.contacts__type Офис:
+                span.contacts__value пн. – пт.: с 9:00 до 18:00, сб. - вс.: выходные
+              .contacts__text 
+                span.contacts__type Производство:
+                span.contacts__value Круглосуточно
+      section.section.section--promo
+        .container
+          h2.section__title Лучшие цены на расходники!
+          p.section__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
+          a.btn.btn--tr(href="#") Сделать заказ со скидкой
+      section.section
+        .container
+          .requisites
+            h2.requisites__title Наши реквизиты
+            p.requisites__item
+              span.requisites__type Полное наименование:
+              | Общество с ограниченной ответственностью «Финфлекс»                    
+            p.requisites__item                
+              span.requisites__type  Генеральный директор:
+              | Ролле Евгений Леонидович 
+            p.requisites__item
+              span.requisites__type  ОГРН:
+              | 1147847374267 от 27.10.2014г. выдан МИФНС №15 по СПб
+            p.requisites__item
+              span.requisites__type  ИНН/КПП:
+              | 7802875313/780201001
+            p.requisites__item
+              span.requisites__type  ОКПО/ОКАТО/ОКТМО:
+              | 73391474 / 40265562000 / 40315000
+            p.requisites__item
+              span.requisites__type  Юридический адрес:
+              | 194017, РФ, город Санкт-Петербург, улица Калязинская, дом 3, литер А, помещение 5-Н.
+            p.requisites__item
+              span.requisites__type  Фактический адрес:
+              | 188351, Ленинградская обл, Гатчинский р-н, пос. Терволово, ул. Ленинградская, д. 15
+            p.requisites__item
+              span.requisites__type  Почтовый адрес: 
+              | 188351, Ленинградская обл, Гатчинский р-н, пос. Терволово, ул. Ленинградская, д. 15
+            p.requisites__item
+              span.requisites__type  Банк:
+              | Дополнительный офис «Энергия» ПАО «БАНК«САНКТ-ПЕТЕРБУРГ» по адресу: 196247, г.Санкт-Петербург, пл.Конституции, д.1.
+            p.requisites__item
+              span.requisites__type  Р/с:
+              | №: 40702810590180000414
+            p.requisites__item
+              span.requisites__type  Кор/счет:
+              | 30101810900000000790 СЕВЕРО-ЗАПАДНОЕ ГУ БАНКА РОССИИ СПБ
+            p.requisites__item
+              span.requisites__type  БИК:
+              | 044030790
+      section.section.section--map
+        .map#map
+      section.section
+        .container
+          .form
+            h2.form__title Завершающее предложение
+            p.form__text Призыв оставить контактные данные, например, чтобы связаться со специалистом для консультации
+            .form__fields
+              input.input-group__input
+              input.input-group__input
+            a.form__btn.btn.btn--orange(href="#") Подписаться
+
+
+
+    include includes/footer.pug
+  
+  
+
+</html>
