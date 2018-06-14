@@ -24,13 +24,16 @@ body
               .contacts__title.contacts__title--msg Телефоны, e-mail
               .contacts__text 
                 span.contacts__type Отдел продаж:
-                span.contacts__value +7 (812) 600-32-14, sales@finfleks.ru
+                span.contacts__value +7 (812) 600-32-14,  
+                  a.link.link--text(href="mailto:sales@finfleks.ru") sales@finfleks.ru
               .contacts__text 
                 span.contacts__type Ген. директор: 
-                span.contacts__value Ролле Евгений Леонидович, +7 (921) 758-99-31,  tek59@yandex.ru
+                span.contacts__value Ролле Евгений Леонидович, +7 (921) 758-99-31,  
+                  a.link.link--text(href="mailto:tek59@yandex.ru") tek59@yandex.ru
               .contacts__text 
                 span.contacts__type Зам. ген. директора: 
-                span.contacts__value Тихонова Анастасия Ивановна, +7 (812) 493 44 08,  +7 (921) 413-83-02 (моб.), anastasiya@finflex.ru 
+                span.contacts__value Тихонова Анастасия Ивановна, +7 (812) 493 44 08,  +7 (921) 413-83-02 (моб.) 
+                  a.link.link--text(href="anastasiya@finflex.ru") anastasiya@finflex.ru
             .contacts__item
               .contacts__title.contacts__title--clock Режим работы 
               .contacts__text 
@@ -85,7 +88,14 @@ body
               span.requisites__type  БИК:
               | 044030790
       section.section.section--map
-        .map#map
+        .map
+          .map__map#map
+          .container
+            .map__desc
+              .map__info <span>Офис:</span> Санкт-Петербург, ул. [Название улицы], д. [XX]
+              .map__info <span>Производство:</span> п.Терволово, ул. Ленинградская, д. 15, 
+                a.map__link(href="#") Открыть схему проезда 
+
       section.section
         .container
           .form
@@ -97,7 +107,7 @@ body
             a.form__btn.btn.btn--orange(href="#") Подписаться
 
 
-
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU" type="text/javascript"></script>
     include includes/footer.pug
   
   

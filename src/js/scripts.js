@@ -50,4 +50,30 @@ $(function (){
   slideoutBtn.addEventListener('click', function() {
     slideout.toggle();
   });
+
+
+  if ($('#map').length) {
+    ymaps.ready(function(){
+      console.log('ymaps ready');
+      
+
+      map = new ymaps.Map("map", {
+          center: [59.853029, 30.233864],
+          zoom: 13,
+          controls: []
+      });
+      placemark=new ymaps.Placemark(
+        [59.853029, 30.233864],
+        {
+          balloonContent:"Пункт выдачи заказа",
+          balloonContentHeader:"Пункт выдачи заказа",
+          balloonContentBody:"Пункт выдачи заказа: Санкт-Петербург, Ленинский проспект, д. 110к1"
+        },
+        { 
+          preset:"islands#icon",
+          iconColor:"#0095b6"
+        });
+      map.geoObjects.add(placemark);
+    }); 
+  }
 });

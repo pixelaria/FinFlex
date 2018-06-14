@@ -21,6 +21,23 @@ body {
 .wrapper {
   overflow: hidden;
 }
+
+.main {
+  &__video {
+    display: none;
+    @media @tablet {
+      display: block;
+      height: 100%;
+      width: auto;
+      position: absolute;
+      top: 0;
+    }
+    @media @desktop {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
 /* slideout */
 
 .slideout-menu {
@@ -154,12 +171,16 @@ h1,h2,h3,h4,p {
 }
 
 .header {
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: transparent;
   
   transition: all 0.3s ease;
   will-change: transform;
+  z-index: 1;
 
   &__items {
     display: flex;
@@ -259,6 +280,9 @@ h1,h2,h3,h4,p {
 
 .link {
   transition: border-color 0.3s ease;
+  &--text {
+    color: inherit;
+  }
   &--light {
     color: @text-light;
     text-decoration: underline;
@@ -623,15 +647,17 @@ h1,h2,h3,h4,p {
   }
   
   &--main {
-    padding-top: 0;
+    padding-top: 80px;
     padding-bottom: 0;
 
     @media @tablet {
-      padding: 0;
+      padding-top: 130px;
+      padding-bottom: 0;
     }
 
     @media @desktop {
-      padding: 80px 0;
+      padding-top: 180px;
+      padding-bottom: 80px;
     }
   }
 
@@ -1432,12 +1458,14 @@ h1,h2,h3,h4,p {
 }
 
 .contacts {
+  @media @tablet {
+    max-width: 850px;
+  }
   &__item {
     position: relative;
     margin-bottom: 30px;
     font-size: 18px;
     line-height: 32px;
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -1450,8 +1478,8 @@ h1,h2,h3,h4,p {
   &__type {
     @media @desktop {
       display: block;
-      width: 250px;
-      min-width: 250px;
+      width: 230px;
+      min-width: 230px;
     }
   }
 
@@ -1588,8 +1616,63 @@ h1,h2,h3,h4,p {
   }
 }
 .map {
-  height: 350px;
+  position: relative;
   background-color: #d8d8d8;
+  &__map {
+    height: 350px;
+    @media @desktop {
+      height: 600px;
+    }
+  }
+  
+  @media @tablet {
+    &__desc {
+      position: absolute;
+      left: 0;
+      bottom: 50px;
+    }
+
+    &__info {
+      width: 330px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 16px rgba(227, 231, 235, 0.5), 0 0 4px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+    &__link {
+      position: relative;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      color: @text-orange;
+      padding-left: 30px;
+      text-decoration: none;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background-image: url('../img/icon-directions.png');
+        
+        
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+    }
+  }
+  
 }
 
 .form {
