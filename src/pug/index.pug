@@ -9,10 +9,10 @@ body
   .wrapper#panel
     include includes/header.pug
     main.main
-      section.section.section--page
+      section.section.section--main
         .container
           .page
-            h1.page__title Производство  упаковки из <wbr>полиэтилена 
+            h1.page__title.page__title--nomb Производство  упаковки из <wbr>полиэтилена 
               .animated
                 ul.animated__list
                   li.animated__item за 24 часа
@@ -32,18 +32,18 @@ body
             .section__part
               h2.section__title.section__title--white.section__title--left Рассчитайте стоимость вашего заказа
               p.section__text.section__text--white Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi Ipsam voluptatem quia voluptas sit aspernatur aut
-            .section__part.form
-              .form__fields
-                .form__field.form__field--90.input-group
+            .section__part.calc
+              .calc__fields
+                .calc__field.calc__field--90.input-group
                   label.input-group__label Вид продукции: 
                   +select('name','Полиэтиленовая плёнка','Полиэтиленовая плёнка','Полиэтиленовая плёнка')
-                .form__field.form__field--90.input-group
+                .calc__field.calc__field--90.input-group
                   label.input-group__label Вид пленки: 
                   +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
-                .form__field.form__field--75.input-group
+                .calc__field.calc__field--75.input-group
                   label.input-group__label Тип пленки: 
                   +radio('name','Полурукав','Рукав')
-                .form__field.input-group.input-group--start
+                .calc__field.input-group.input-group--start
                   label.input-group__label Длина, Ширина, Толщина: 
                   .input-group__group
                     .input-group__box
@@ -56,13 +56,13 @@ body
                       input.input-group__input
                       .input-group__desc м
 
-              .form__fields.form__fields--info
-                .form__field.input-group
+              .calc__fields.calc__fields--info
+                .calc__field.input-group
                   input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
                   input.input-group__input.im--phone.input-group__input--phone(name="phone" placeholder="Телефон")
-              .form__buttons
-                a.form__btn.btn.btn--orange Рассчитать
-                p.form__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с
+              .calc__buttons
+                a.calc__btn.btn.btn--orange Рассчитать
+                p.calc__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с
                   a.link.link--light(href='#') политикой конфиденциальности 
 
       section.section.section--advantages

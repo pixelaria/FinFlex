@@ -20,3 +20,12 @@ mixin list(list_class,item_class,link_class, ...items)
     each item in items
       li.list__item
         a.list__link(href="#" class= link_class)= item
+
+
+mixin breadcrumbs(last, ...items)
+  ul.breadcrumbs
+    each item in items
+      li.breadcrumbs__item
+        a.breadcrumbs__link(href="#")= item
+    li.breadcrumbs__item
+        = last
