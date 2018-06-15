@@ -44,9 +44,11 @@ body
                 span.contacts__value Круглосуточно
       section.section.section--promo
         .container
-          h2.section__title Лучшие цены на расходники!
-          p.section__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
-          a.btn.btn--tr(href="#") Сделать заказ со скидкой
+          .promo
+            .promo__info
+              h2.promo__title Лучшие цены на расходники!
+              p.promo__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
+            a.promo__btn.btn.btn--tr(href="#") Сделать заказ со скидкой
       section.section
         .container
           .requisites
@@ -99,14 +101,16 @@ body
       section.section
         .container
           .form
-            h2.form__title Завершающее предложение
-            p.form__text Призыв оставить контактные данные, например, чтобы связаться со специалистом для консультации
+            .form__info
+              h2.form__title Завершающее предложение
+              p.form__text Призыв оставить контактные данные, например, чтобы связаться со специалистом для консультации
+            
             .form__fields
               .input-group
                 input.input-group__input(placeholder="Ваше имя")
               .input-group
                 input.input-group__input(placeholder="E-mail")
-            a.form__btn.btn.btn--orange(href="#") Подписаться
+              a.form__btn.btn.btn--orange(href="#") Подписаться
 
 
     <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU" type="text/javascript"></script>
