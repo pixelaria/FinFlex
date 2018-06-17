@@ -22,6 +22,14 @@ body {
   overflow: hidden;
 }
 
+.body {
+  &--main {
+    .footer__car {
+      display: block;
+    }
+  }
+}
+
 .main {
   &__video {
     display: none;
@@ -130,7 +138,7 @@ h1,h2,h3,h4,p {
     display: inline-block;
     font-size: 14px;
     font-weight: 300;
-    margin-right: 10px;
+    margin-right: 5px;
     padding-right: 20px;
     &:after {
       content: '/';
@@ -258,7 +266,7 @@ h1,h2,h3,h4,p {
 
   color: #ffffff;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   line-height: 60px;
   cursor: pointer;
@@ -271,7 +279,15 @@ h1,h2,h3,h4,p {
   }
 
   &--orange {
-    background-image: linear-gradient(73deg, #ff9930 0%, #f46f34 100%);
+    transition: 0.5s;
+
+    background-image: linear-gradient(to right, #ff9930 0%, #f46f34 51%, #ff9930 100%);
+    background-size: 200% auto;
+    
+    &:hover {
+      transition: 0.5s;
+      background-position: right center; 
+    }
   }
   
   &--tr {
@@ -279,6 +295,12 @@ h1,h2,h3,h4,p {
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: none;
     line-height: 58px;
+
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
   @media @tablet {
     padding: 0 40px;
@@ -289,29 +311,27 @@ h1,h2,h3,h4,p {
 
 .link {
   transition: border-color 0.3s ease;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  
   &--text {
     color: inherit;
   }
   &--light {
     color: @text-light;
-    text-decoration: underline;
   }
 
   &--orange {
     color: @text-orange;
-    text-decoration: underline;
   }
 
+  &:hover {
+    border-color:transparent;
+  }
   &--dashed {
     text-decoration: none;
     border-bottom: 1px dashed;
-    
-    &:hover {
-        border-color:transparent;
-    }
   }
-
-  
 }
 
 .icon {
@@ -510,11 +530,14 @@ h1,h2,h3,h4,p {
     }
 
     @media @desktop {
-      font-size: 58px;
       line-height: 70px;
       text-align: left;
       &--nomb {
         margin-bottom: 0;
+      }
+
+      &--big {
+        font-size: 58px;
       }
     }
 
@@ -760,7 +783,7 @@ h1,h2,h3,h4,p {
         background-color: #ffffff;
         height: 300px;
         left: -35%;
-        bottom: -245px;
+        bottom: -225px;
       }
 
       &:after {
@@ -1082,6 +1105,10 @@ h1,h2,h3,h4,p {
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    @media @desktop {
+
     }
 
   }
@@ -1830,6 +1857,12 @@ h1,h2,h3,h4,p {
     margin-left: -20px;
     margin-right: -20px;
     padding: 20px;
+
+    @media @desktop {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
   }
   @media @tablet {
     &__desc {
@@ -1951,6 +1984,7 @@ h1,h2,h3,h4,p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0;
 
     &__info {
       width: 50%;
@@ -1981,6 +2015,11 @@ h1,h2,h3,h4,p {
 
   &__text {
     margin-bottom: 30px;
+    @media @desktop {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   
 
@@ -2024,7 +2063,9 @@ h1,h2,h3,h4,p {
     @media @desktop {
       width: 260px;
       min-width: 260px;
+      margin-bottom: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -2121,7 +2162,7 @@ h1,h2,h3,h4,p {
   }
 
   &__car {
-    display: block;
+    display: none;
     position: absolute;
     top: -20px;
     width: 65px;
@@ -2134,8 +2175,6 @@ h1,h2,h3,h4,p {
     animation-name: wheels;
     animation-duration: 20s;
     animation-iteration-count: infinite;
-
-    
   }
 }
 
