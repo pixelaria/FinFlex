@@ -1,0 +1,105 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+
+include includes/head.pug
+
+body
+  include includes/aside.pug
+  .wrapper#panel
+    include includes/header.pug
+    main.main
+      section.section.section--page
+        .container
+          +breadcrumbs('Упаковочная пленка', 'Главная','Плёнки')
+          .product
+            h1.product__title Упаковочная плёнка от производителя
+            .product__photo
+              .gallery
+                .gallery__item.gallery__item--main
+                  img.gallery__img(src="/img/product-1.png")
+                .gallery__gallery
+                  .gallery__item
+                    img.gallery__img(src="/img/product-1.png")
+                  .gallery__item
+                    img.gallery__img(src="/img/product-1.png")
+                  .gallery__item
+                    img.gallery__img(src="/img/product-1.png")
+            .product__desc
+              .product__params.params
+                .params__item Минимальная ширина 50 мм
+                .params__item Максимальная ширина 1700 мм
+                .params__item Толщина 6-200 мкм
+                .params__item Количество цветов: до 4-х
+              .product__btn
+                .tip Время производства от 24 часов
+                a.btn.btn--orange(href="#") Оформить заказ
+                
+
+      section.section.section--promo
+        .container
+          .promo
+            .promo__info
+              h2.promo__title Лучшие цены на расходники!
+              p.promo__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня!
+            a.promo__btn.btn.btn--tr(href="#") Сделать заказ со скидкой
+      section.section.section--productcalc
+        .container
+          .section__row
+            .section__part
+              h2.section__title.section__title--left Рассчитайте стоимость вашего заказа
+              p.section__text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi Ipsam voluptatem quia voluptas sit aspernatur aut
+              p.section__text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            .section__part.calc
+              .calc__fields
+                .calc__field.calc__field--75.input-group
+                  label.input-group__label Тип пленки: 
+                  +radio('name','Полурукав','Рукав')
+                .calc__field.input-group.input-group--start
+                  label.input-group__label Длина, Ширина, Толщина: 
+                  .input-group__group
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc мм
+                    .input-group__box
+                      input.input-group__input
+                      .input-group__desc м
+
+              .calc__fields.calc__fields--info
+                .calc__field.input-group
+                  input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
+                  input.input-group__input.im--phone.input-group__input--phone(name="phone" placeholder="Телефон")
+              .calc__buttons
+                a.calc__btn.btn.btn--orange Рассчитать
+                p.calc__privacy Нажимая на кнопку, вы даете согласие на обработку своих персональных данных согласно с 
+                  a.link.link--light(href='#') политикой конфиденциальности 
+      section.section.section--white
+        .container
+          h2.section__title Виды и назначение пленок
+          p.section__text ПВД- Пленка из полиэтилена высокого давления, незаменимая при упаковке самой разнообразной продукции, относящегося к классу высокого давления. Универсальный материал для использования в любых отраслях. Отличительные особенности пленки ПВД, как и любое другое полиэтиленовое изделие, устойчива к влиянию внешней среды и дает превосходную защиту от жидкости и водяного пара. При этом полиэтилен высокого давления придает ей особые свойства: повышенная прочность к разрезам и физическим повреждениям, высокая гибкость, эластичность и растяжимость, возможность легкой вторичной переработки и последующего повторного использования. Абсолютно безопасно для здоровья человека.
+          .section__img
+            img.img.img--responsive(src="./img/film.png")
+          p.section__text ПНД – Плёнка из полиэтилена низкого давления. Применяется в качестве гидроизоляционного слоя при строительстве, для упаковки пищевых продуктов и во всех сферах производства, а так же в бытовых целях. Особенности такой плёнки: механическая (ударная) прочность, жесткость, теплоустойчивость, эластичность материала сохраняется при воздействии повышенных и пониженных температур, устойчивость к воздействию агрессивных сред, водонепроницаемость.»- его предлагаю сделать под меню с видами плёнок «Упаковочная, термоусадочная и с печатью. 
+      section.section.section--form
+        .container
+          .form
+            .form__info
+              h2.form__title Завершающее предложение
+              p.form__text Призыв оставить контактные данные, например, чтобы связаться со специалистом для консультации
+            
+            .form__fields
+              .input-group
+                input.input-group__input.input-group__input--big(placeholder="Ваше имя")
+              .input-group
+                input.input-group__input.input-group__input--big(placeholder="E-mail")
+              a.form__btn.btn.btn--orange(href="#") Подписаться
+
+
+
+
+    
+    include includes/footer.pug
+</html>
