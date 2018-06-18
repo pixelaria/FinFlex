@@ -942,7 +942,10 @@ h1,h2,h3,h4,p {
     @media @desktop {
       display: flex;
       justify-content: space-between;
-
+      
+      margin-right: -30px;
+      margin-left: -30px;
+      
       &--reverse {
         flex-direction: row-reverse;
       }
@@ -960,9 +963,9 @@ h1,h2,h3,h4,p {
       margin-bottom: 40px;
       padding: 40px 0;
 
-      &:first-child {
-        margin-right: 60px;
-      }
+      margin-left: 30px;
+      margin-right: 30px;
+      
     }
     
   }
@@ -1068,8 +1071,10 @@ h1,h2,h3,h4,p {
     display: block;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 14px rgba(243, 243, 243, 0.5);
-
     background-color: #ffffff;
+    
+    
+
     margin-bottom: 20px;
 
     cursor: pointer;
@@ -1106,12 +1111,17 @@ h1,h2,h3,h4,p {
         margin-right: 0;
       }
     }
+<<<<<<< HEAD
 
     @media @desktop {
 
     }
 
+=======
+>>>>>>> cb5eac39659148beca5a01bf323d36f8b29a9bef
   }
+
+  
 
   &__title {
     position: absolute;
