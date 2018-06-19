@@ -550,6 +550,35 @@ h1,h2,h3,h4,p {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 60px;
+    &--404 {
+      margin-bottom: 0;
+    }
+  }
+
+
+
+  
+  &__part {
+    
+    &--404 {
+      @media @tablet {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 150px;
+      }
+    
+      @media @desktop {
+        position: relative;
+        width: 30%;
+      }
+    }
+    &--desc {
+      @media @desktop {
+        position: relative;
+        width: 60%;
+      }
+    }
   }
 }
 
@@ -2117,6 +2146,18 @@ h1,h2,h3,h4,p {
         &:last-child {
           margin-right: 0;
         }
+      }
+    }
+  }
+
+  &--text {
+    .list__item {
+      text-align: left;
+      &:before {
+        content: '—';
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
       }
     }
   }
