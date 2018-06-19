@@ -1,0 +1,42 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+
+include includes/head.pug
+
+body
+  include includes/aside.pug
+  .wrapper#panel
+    include includes/header.pug
+    main.main
+      section.section.section--page.section--contacts
+        .container
+          +breadcrumbs('Ошибка 404', 'Главная')
+          .page.page--404
+            .page__part.page__part--desc
+              h1.page__title Ошибка 404
+              .section__text К сожалению, указанная страница не существует или удалена. Возможно, это случилось по одной из следующих причин: 
+              ul.list.list--text
+                li.list__item Вы ошиблись при наборе адреса страницы (URL);
+                li.list__item Вы перешли по «битой» (неработающей, неправильной) ссылке;
+                li.list__item Запрашиваемой страницы никогда не было на сайте или она была удалена.
+            .page__part.page__part--404
+              img.img.img--responsive(src="img/404.png")
+              
+      section.section.section--promo
+        .container 
+          .promo
+            .promo__info
+              h2.promo__title Лучшие цены на расходники!
+              p.promo__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
+            a.promo__btn.btn.btn--tr(href="#") Сделать заказ со скидкой
+      section.section.section--map
+        .map
+          .map__map#map
+          .container
+            .map__desc
+              .map__info <span>Офис:</span> Санкт-Петербург, ул. [Название улицы], д. [XX]
+              .map__info <span>Производство:</span> п.Терволово, ул. Ленинградская, д. 15
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU" type="text/javascript"></script>
+    include includes/footer.pug
+</html>
