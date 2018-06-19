@@ -2660,7 +2660,8 @@ h1,h2,h3,h4,p {
     margin-left: 15px;
   }
 }
-.gallery {
+
+.thumbs {
   width: 100%;
 
   &__gallery {
@@ -2779,7 +2780,7 @@ h1,h2,h3,h4,p {
       max-width: 300px;
     }
 
-    &:before,&:after {
+    &:before, &:after {
       content: '';
       width: 70px;
       height: 70px;
@@ -2907,6 +2908,25 @@ h1,h2,h3,h4,p {
   }
 }
 
+.gallery {
+
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    box-shadow: 0 10px 16px rgba(227, 231, 235, 0.5), 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+}
 .footer {
   position: relative;
   background-color: #303030;
