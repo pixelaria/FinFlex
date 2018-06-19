@@ -1,0 +1,51 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+
+include includes/head.pug
+
+body
+  include includes/aside.pug
+  .wrapper#panel
+    include includes/header.pug
+    main.main
+      section.section.section--page
+        .container
+          +breadcrumbs('Новости', 'Главная')
+          h1.page__title Новости
+          - var n = 0;
+          .news-list
+            while n < 4
+              - n++
+              .news-list__item
+                .news-list__img
+                  img.img.img--responsive(src="img/article.png")
+                .news-list__info
+                  .news-list__title Заголовок новости
+                  .news-list__desc Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
+      section.section.section--promo
+        .container
+          .promo
+            .promo__info
+              h2.promo__title Лучшие цены на расходники!
+              p.promo__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
+            a.promo__btn.btn.btn--tr(href="#") Сделать заказ со скидкой
+      section.section
+        .container
+          - var n = 0;
+          .news-list
+            while n < 4
+              - n++
+              .news-list__item
+                .news-list__img
+                  img.img.img--responsive(src="img/article.png")
+                .news-list__info
+                  .news-list__title Заголовок новости
+                  .news-list__desc Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
+
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU" type="text/javascript"></script>
+    include includes/footer.pug
+  
+  
+
+</html>

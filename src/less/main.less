@@ -1603,6 +1603,10 @@ h1,h2,h3,h4,p {
     transition: all 0.3s ease;
     backface-visibility: hidden;
     cursor: pointer;
+
+    box-shadow: 0 10px 16px rgba(227, 231, 235, 0.5), 0 0 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 14px rgba(243, 243, 243, 0.5);
@@ -1635,12 +1639,6 @@ h1,h2,h3,h4,p {
     display: block;
     text-align: center;
   }
-}
-
-.article {
-  box-shadow: 0 10px 16px rgba(227, 231, 235, 0.5), 0 0 4px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  
 
   &__img {
     width: 100%;
@@ -1664,6 +1662,96 @@ h1,h2,h3,h4,p {
     line-height: 32px;
 
   }
+}
+
+.news-list {
+  margin-left: -20px;
+  margin-right: -20px;
+  
+  @media @tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  &__item {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 20px;
+
+    @media @tablet {
+      width: ~'calc(50% - 20px)';
+      min-width: ~'calc(50% - 20px)';
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    @media @desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      &:nth-last-child(1),&:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media @desktop {
+    &__img {
+      width: ~'calc(40% - 15px)';
+      min-width: ~'calc(40% - 15px)';
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 0;
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+      img {
+        height: 100%;
+        width: auto;
+        display: block;
+        position: absolute;
+        top: 50%;  
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__info {
+      width: ~'calc(60% - 15px)';
+      min-width: ~'calc(60% - 15px)';
+    }
+  }
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  &__img {
+    margin-bottom: 15px;
+    img {
+      display: block;
+    }
+  }
+}
+
+.article {
+  
+  
+
+ 
 }
 
 

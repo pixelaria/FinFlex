@@ -103,11 +103,11 @@ body.body.body--main
           .news
             .news__items
               each val in ['Новость 1', 'Новость 2', 'Новость 3']
-                article.news__item.article
-                  img.article__img(src='./img/article.png')
-                  .article__desc
-                    .article__title= val
-                    .article__text "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque …
+                news.news__item.news
+                  img.news__img(src='./img/article.png')
+                  .news__desc
+                    .news__title= val
+                    .news__text "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque …
             a.news__link.link.link--orange(href='#') Перейти в архив новостей
 
 
