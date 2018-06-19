@@ -1073,6 +1073,14 @@ h1,h2,h3,h4,p {
     margin-top: 50px;
     margin-bottom: 50px;
     
+    @media @desktop {
+      display: block;
+      width: 25%;
+      min-width: 25%;
+      margin-left: 50px;
+      margin-top: 0;
+    }
+    
     &:after {
       content: '';
       display: block;
@@ -1080,6 +1088,9 @@ h1,h2,h3,h4,p {
     }
     
     &--left {
+      @media @desktop {
+        margin-right: 50px;
+      }
       .section__photo__inner {
         left: unset;
         right: 0;
