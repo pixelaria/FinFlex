@@ -874,6 +874,14 @@ h1,h2,h3,h4,p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    padding-bottom: 0;
+    @media @tablet {
+      padding-bottom: 0;
+    }
+    @media @desktop {
+      padding-bottom: 80px;
+    }
   }
 
   &--category {
@@ -1756,18 +1764,34 @@ h1,h2,h3,h4,p {
 }
 
 .article {
-  padding: 0 20px;
-  
+  & > .container {
+    padding: 0;
+    width: 100%;
+  }
   @media @desktop {
-    display: flex;
-    justify-content: space-between;
-    &__main {
-      width: ~'calc(70% - 20px)';
-      min-width: ~'calc(70% - 20px)';
+    & > .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: stretch;
+      padding: 0 20px !important;
+      width: 1140px;
     }
-    &__aside {
-      width: ~'calc(30% - 20px)';
-      min-width: ~'calc(30% - 20px)'; 
+    
+    .container {
+      padding: 0;
+      height: 100%;
+    }
+
+    &__img, &__desc {
+      width: ~'calc(70% - 40px)';
+      min-width: ~'calc(70% - 40px)';
+    }
+    &__promo, &__related  {
+      width: 30%;
+      min-width: 30%; 
     }
   }
   
@@ -1775,28 +1799,35 @@ h1,h2,h3,h4,p {
     margin-left: -20px;
     margin-right: -20px;
     margin-bottom: 30px;
+    
     @media @desktop {
       margin-left: 0;
       margin-right: 0;
       margin-bottom: 60px;
+      order: 1;
     }
   }
   &__desc {
     margin-bottom: 30px;
+    @media @desktop {
+      order:3;
+    }
   }
   &__promo {
     background-image: linear-gradient(251deg, #f46e34 0%, #ff9a2f 100%);
     color:#ffffff;
-    margin-left: -20px;
-    margin-right: -20px;
-    padding: 40px 20px;
+    
+    padding: 40px 0;
+
+    @media @desktop {
+      order:4;
+    } 
   }
   &__related {
-    margin-bottom: 30px;
-  }
-
-  @media @desktop {
-   
+    margin-bottom: 60px;
+    @media @desktop {
+      order:2;
+    }
   }
 }
 
@@ -1808,6 +1839,8 @@ h1,h2,h3,h4,p {
   }
   @media @desktop {
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
   &__item {
     display: flex;
@@ -1820,6 +1853,7 @@ h1,h2,h3,h4,p {
     @media @desktop {
       width: 100%;
       min-width: 100%;
+      margin-bottom: 0;
     }
   }
   &__img {
@@ -2132,6 +2166,17 @@ h1,h2,h3,h4,p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    &--aside {
+      display: block;
+      padding: 0 35px;
+      .promo__info {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .promo__btn {
+        padding: 0 15px;
+      }
+    }
   }
 
   &__info {
