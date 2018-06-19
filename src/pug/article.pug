@@ -1,0 +1,39 @@
+include includes/mixins.pug
+doctype html
+<html lang="en">
+
+include includes/head.pug
+
+body
+  include includes/aside.pug
+  .wrapper#panel
+    include includes/header.pug
+    main.main
+      section.section.section--page.section--article
+        .container
+          +breadcrumbs('Заголовок новости', 'Главная', 'Новости')
+          h1.page__title Заголовок новости
+        article.article
+          .article__main
+            .article__img
+              img.img.img--responsive(src="img/article-big.png")
+            .article__desc
+              p.section__text "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+              p.section__text Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
+          .article__aside
+            .article__related.related
+              - var n = 0;
+                while n < 4
+                  - n++
+                  .related__item
+                    .related__img
+                      img.img.img--responsive(src="img/related.png")
+                    .related__title Заголовок новости, длинный в 2 строки
+            .article__promo
+              .promo.promo--aside
+                .promo__info
+                  h2.promo__title Лучшие цены на расходники!
+                  p.promo__text Сейчас у нас в наличии, по лучшим ценам, перчатки х/б, респираторы, плёнка- стрейч. Предложение ограничено так что сделайте заказ уже сегодня! 
+                a.promo__btn.btn.btn--tr(href="#") Сделать заказ со скидкой
+    include includes/footer.pug
+</html>
