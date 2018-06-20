@@ -2619,8 +2619,20 @@ h1,h2,h3,h4,p {
 
   @media @tablet {
     display: flex;
-    height: 420px;
+    height: 400px;
     flex-flow: column wrap;
+    .btn {
+      padding: 0 15px;
+    }
+  }
+  @media @desktop {
+    height: 490px;
+    .btn {
+      padding: 0 40px;
+    }
+  }
+  @media @large {
+    height: 420px;
   }
 
   &__title {
@@ -2836,7 +2848,7 @@ h1,h2,h3,h4,p {
     }
 
     &:before {
-      
+      background-size: 30px;
       background-position: center;
       background-repeat: no-repeat;
       z-index: 2;
@@ -2844,6 +2856,7 @@ h1,h2,h3,h4,p {
 
     &--chemical {
       &:before {
+        background-size: 25px;
         background-image: url('../img/icon-chemical.png');
       }
     }
@@ -2884,6 +2897,7 @@ h1,h2,h3,h4,p {
     }
     &--auto {
       &:before {
+        background-size: 35px;
         background-image: url('../img/icon-auto.png');
       }
     }
