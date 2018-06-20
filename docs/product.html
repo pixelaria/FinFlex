@@ -13,10 +13,31 @@
     <nav class="navbar__nav">
       <div class="navbar__inner">
         <ul class="navbar__list">
-          <li class="navbar__item"><a class="navbar__link" href="#">Плёнка</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="#">Мешки и пакеты</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#">Плёнка</a>
+            <div class="navbar__toggler"></div>
+            <ul class="navbar__sublist">
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+            </ul>
+          </li>
+          <li class="navbar__item"><a class="navbar__link" href="#">Мешки и пакеты</a>
+            <div class="navbar__toggler"></div>
+            <ul class="navbar__sublist">
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+            </ul>
+          </li>
           <li class="navbar__item"><a class="navbar__link" href="#">Флексопечать</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="#">О компании</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#">О компании</a>
+            <div class="navbar__toggler"></div>
+            <ul class="navbar__sublist">
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+              <li class="navbar__item"><a class="navbar__link" href="#">Подкатегория</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>
@@ -27,10 +48,31 @@
         <div class="header__item header__item--logo logo">Финфлекс</div>
         <nav class="header__item header__item--menu nav">
           <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="#">Пленка</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Мешки и пакеты</a></li>
+            <li class="nav__item nav__item--parent"><a class="nav__link" href="#">Плёнка</a>
+              <div class="nav__toggler"></div>
+              <ul class="nav__sublist">
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--parent"><a class="nav__link" href="#">Мешки</a>
+              <div class="nav__toggler"></div>
+              <ul class="nav__sublist">
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+              </ul>
+            </li>
             <li class="nav__item"><a class="nav__link" href="#">Флексопечать</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">О компании</a></li>
+            <li class="nav__item nav__item--parent"><a class="nav__link" href="#">О компании</a>
+              <div class="nav__toggler"></div>
+              <ul class="nav__sublist">
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Подкатегория</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <div class="header__item header__item--callback">
@@ -43,7 +85,7 @@
       </div>
     </header>
     <main class="main">
-      <section class="section section--page">
+      <section class="section section--page section--product">
         <div class="container">
           <ul class="breadcrumbs">
             <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
@@ -142,7 +184,7 @@
         <div class="container">
           <h2 class="section__title">Виды и назначение пленок</h2>
           <p class="section__text">ПВД- Пленка из полиэтилена высокого давления, незаменимая при упаковке самой разнообразной продукции, относящегося к классу высокого давления. Универсальный материал для использования в любых отраслях. Отличительные особенности пленки ПВД, как и любое другое полиэтиленовое изделие, устойчива к влиянию внешней среды и дает превосходную защиту от жидкости и водяного пара. При этом полиэтилен высокого давления придает ей особые свойства: повышенная прочность к разрезам и физическим повреждениям, высокая гибкость, эластичность и растяжимость, возможность легкой вторичной переработки и последующего повторного использования. Абсолютно безопасно для здоровья человека.</p>
-          <div class="section__img"><img class="img img--responsive" src=".img/film.png"></div>
+          <div class="section__img"><img class="img img--responsive" src="img/film.png"></div>
           <p class="section__text">ПНД – Плёнка из полиэтилена низкого давления. Применяется в качестве гидроизоляционного слоя при строительстве, для упаковки пищевых продуктов и во всех сферах производства, а так же в бытовых целях. Особенности такой плёнки: механическая (ударная) прочность, жесткость, теплоустойчивость, эластичность материала сохраняется при воздействии повышенных и пониженных температур, устойчивость к воздействию агрессивных сред, водонепроницаемость.»- его предлагаю сделать под меню с видами плёнок «Упаковочная, термоусадочная и с печатью. </p>
         </div>
       </section>

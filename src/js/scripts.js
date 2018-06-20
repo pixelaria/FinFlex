@@ -51,6 +51,13 @@ $(function (){
     slideout.toggle();
   });
 
+  $('.navbar__toggler').click(function(e){
+    var $item = $(this).closest('.navbar__item');
+    var $sub = $item.find('.navbar__sublist');
+
+    $sub.toggleClass('navbar__sublist--active');
+
+  });
 
   if ($('#map').length) {
     ymaps.ready(function(){

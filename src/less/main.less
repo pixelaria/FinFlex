@@ -195,7 +195,7 @@ h1,h2,h3,h4,p {
   
   transition: all 0.3s ease;
   will-change: transform;
-  z-index: 1;
+  z-index: 3;
 
   @media @tablet {
     top:50px;
@@ -236,6 +236,7 @@ h1,h2,h3,h4,p {
     background-image: url('../img/logo-orange.png');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 30px;
     width: 40px;
     height: 40px;
   }
@@ -245,7 +246,7 @@ h1,h2,h3,h4,p {
     font-weight: 600;
     color: @text-orange;
     text-transform: uppercase;
-
+    
 
     &:before {
       width: 50px;
@@ -253,6 +254,7 @@ h1,h2,h3,h4,p {
       background-image: url('../img/logo.png'), linear-gradient(251deg, #f46e34 0%, #ff9a2f 100%);
       border-radius: 16px;
       margin-right: 20px;
+      background-size: auto;
     }
   }
 }
@@ -361,17 +363,75 @@ h1,h2,h3,h4,p {
     margin:0 ;
   }
 
+
   @media @tablet {
     display: block;
-  
+
+    &__list {
+      display: flex;
+    }
+    
+    &__toggler {
+      background-image: url('../img/icon-down.png');
+      background-position: center 5px;
+      background-repeat: no-repeat;
+      
+      width: 16px;
+      height: 16px;
+
+      cursor: pointer;
+      z-index: 1;
+      margin-left: 10px;
+    }
+
+    &__sublist {
+      position: absolute;
+      top: 50px;
+      left: 0;
+
+      padding: 0;
+      visibility: hidden;
+      z-index: 999;
+      background-color: rgba(255,255,255,0.8);
+      padding: 15px 30px;
+      
+      opacity: 0;
+      transition: all 0.5s ease;
+      
+      &--active {
+        display: block;
+      }
+      .nav__item {
+        display: block;
+        margin-right: 0;
+      }
+    }
+
     &__item {
       display: none;
+      position: relative;
       &:nth-child(1), &:nth-child(2) {
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      margin-right: 10px;
+      margin-right: 30px;
+      cursor: pointer;
       &:last-child {
         margin-right: 0;
+      }
+
+
+      &:hover {
+        & > .nav__link {
+          color: @text-orange;
+        }
+        .nav__sublist {
+          display: block;
+          opacity: 1;
+          top: 35px;
+          visibility: visible;
+        }
       }
     }
 
@@ -381,15 +441,14 @@ h1,h2,h3,h4,p {
       font-weight: 400;
       text-decoration: none;
       transition: color 0.3s ease;
-      &:hover {
-        color: @text-orange;
-      }
     }
   }
 
   @media @desktop {
     &__item {
-      display: inline-block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
@@ -435,10 +494,45 @@ h1,h2,h3,h4,p {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+
+  &__sublist {
+    padding-left: 15px;
+    margin: 0;
+    list-style: none;
+    max-height: 0;
+    
+    opacity: 0;
+    
+    transition:all 0.3s ease;
+
+    &--active {
+      max-height: 99vh;
+      opacity: 1;
+      
+    }
+  }
+
+  &__item {
+    position: relative;
 
   }
-  &__item {
+  
+  &__toggler {
+    background-image: url('../img/icon-down.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 13px;
+    
+    
+    
+    width: 16px;
+    height: 16px;
 
+    cursor: pointer;
+    z-index: 1;
   }
 
   &__link {
@@ -897,6 +991,12 @@ h1,h2,h3,h4,p {
     background-position: center;
     background-repeat: no-repeat;
   }
+  &--product {
+    background-image: url('../img/contacts-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   
   &--article {
     background-image: url('../img/contacts-bg.png');
@@ -1071,6 +1171,7 @@ h1,h2,h3,h4,p {
   &__row {
     @media @tablet {
       margin-bottom: 30px;
+      align-items: center;
       &:last-child {
         margin-bottom: 0;
       }
@@ -2641,6 +2742,7 @@ h1,h2,h3,h4,p {
     font-weight: 500;
     line-height: 44px;
     margin-bottom: 30px;
+    word-wrap: break-word;
 
     @media @tablet {
       font-size: 36px;
@@ -2724,10 +2826,7 @@ h1,h2,h3,h4,p {
     left: 0;
     right: 0;
     align-items: center;
-
-    @media @tablet {
-      justify-content: center;
-    }
+    justify-content: center;
   }
 
   &__item {
@@ -3011,6 +3110,7 @@ h1,h2,h3,h4,p {
     @media @desktop {
       width: 260px;
       min-width: 260px;
+      justify-content: flex-start;
     }
     &:before {
       content: '';

@@ -4,9 +4,38 @@ header.header
       | Финфлекс
     nav.header__item.header__item--menu.nav
       ul.nav__list
-        each val, index in ['Пленка', 'Мешки и пакеты', 'Флексопечать', 'О компании']
-          li.nav__item
-            a.nav__link(href='#')=val
+        li.nav__item.nav__item--parent
+          a.nav__link(href="#") Плёнка
+          .nav__toggler
+          ul.nav__sublist
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+        li.nav__item.nav__item--parent
+          a.nav__link(href="#") Мешки
+          .nav__toggler
+          ul.nav__sublist
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+        li.nav__item
+          a.nav__link(href="#") Флексопечать
+        li.nav__item.nav__item--parent
+          a.nav__link(href="#") О компании
+          .nav__toggler
+          ul.nav__sublist
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
+            li.nav__item
+              a.nav__link(href="#") Подкатегория
     .header__item.header__item--callback
       .callback
         a.callback__phone(href='tel:+78126003214') <span>+7 (812)</span> 600-32-14
