@@ -35,8 +35,7 @@ body
           .section__row
             .section__part
               h2.section__title.section__title--left Рассчитайте стоимость вашего заказа
-              p.section__text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi Ipsam voluptatem quia voluptas sit aspernatur aut
-              p.section__text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+              p.section__text У нас нет прайса, потому что мы работаем на заказ, делая именно ту упаковку, которая нужна каждому из наших клиентов
             .section__part.calc
               .calc__fields
                 .calc__field.calc__field--90.input-group
@@ -44,7 +43,7 @@ body
                   +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
                 .calc__field.calc__field--75.input-group
                   label.input-group__label Тип пленки: 
-                  +radio('name','Полурукав','Рукав')
+                  +radio('name','Полурукав','Рукав','Полотно')
                 .calc__field.input-group.input-group--start
                   label.input-group__label Длина, Ширина, Толщина: 
                   .input-group__group
@@ -56,7 +55,7 @@ body
                       .input-group__desc мм
                     .input-group__box
                       input.input-group__input
-                      .input-group__desc м
+                      .input-group__desc мм
 
               .calc__fields.calc__fields--info
                 .calc__field.input-group

@@ -65,21 +65,27 @@ $(function (){
       
 
       map = new ymaps.Map("map", {
-          center: [59.853029, 30.233864],
+          center: [59.670684, 29.903532],
           zoom: 13,
           controls: []
       });
       placemark=new ymaps.Placemark(
-        [59.853029, 30.233864],
+        [59.670684, 29.903532],
         {
-          balloonContent:"Пункт выдачи заказа",
-          balloonContentHeader:"Пункт выдачи заказа",
-          balloonContentBody:"Пункт выдачи заказа: Санкт-Петербург, Ленинский проспект, д. 110к1"
+          balloonContent:"Производство",
+          balloonContentHeader:"Производство",
+          balloonContentBody:"п.Терволово, ул. Ленинградская, д. 15"
         },
         { 
-          preset:"islands#icon",
-          iconColor:"#0095b6"
+          
+          
+          iconLayout: 'default#image',
+          iconImageHref: 'img/icon-pin-map.png',
+          iconImageSize: [40, 51]
+        
         });
+
+      
       map.geoObjects.add(placemark);
     }); 
   }
