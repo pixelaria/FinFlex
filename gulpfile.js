@@ -22,7 +22,12 @@ var gulp = require('gulp'),
   cssnano = require('gulp-cssnano'),
   notify = require('gulp-notify'),
   cache = require('gulp-cache'),
-  zip = require('gulp-zip');
+  zip = require('gulp-zip'),
+  svgstore = require('gulp-svgstore'),
+  svgmin = require('gulp-svgmin'),
+  cheerio = require('gulp-cheerio'),
+  size = require('gulp-size'),
+  rename = require('gulp-rename');
 
 // Компиляция LESS
 gulp.task('less', function() { 
@@ -38,7 +43,7 @@ gulp.task('less', function() {
     }))
     .pipe(cleanCSS()) // чистим css
     .pipe(postcss([
-      autoprefixer({browsers: ['last 3 version']}), // вендорные префиксы
+      autoprefixer({browsers: ['last 10 version']}), // вендорные префиксы
       mqpacker({sort: true}), // конкатенация media query
     ]))
     .pipe(gulp.dest('./docs/css/')) // Выгружаем результата в папку docs/css
@@ -68,6 +73,37 @@ gulp.task('js', function () {
     .pipe(jsmin())
     .pipe(gulp.dest('./docs/js/'))
     .pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
+});
+
+//Сборка 
+gulp.task('svg', function (callback) {
+  let spritePath = 'src/svg/';
+  if(fileExist(spritePath) !== false) {
+    console.log('---------- Сборка SVG спрайта');
+    return gulp.src(spritePath + '*.svg')
+      .pipe(svgmin(function (file) {
+        return {
+          plugins: [{
+            cleanupIDs: {
+              minify: true
+            }
+          }]
+        }
+      }))
+      .pipe(svgstore({ inlineSvg: true }))
+      .pipe(cheerio(function ($) {$('svg').attr('style',  'display:none');}))
+      .pipe(rename('sprite.svg'))
+      .pipe(size({
+        title: 'Размер',
+        showFiles: true,
+        showTotal: false,
+      }))
+      .pipe(gulp.dest('docs/svg/'))
+      .pipe(browserSync.reload({stream: true}));
+  } else {
+    console.log('---------- Сборка SVG спрайта: нет папки с картинками');
+    callback();
+  }
 });
 
 // Собираем html из _html и помещаем в корень
@@ -126,3 +162,13 @@ gulp.task('watch', ['browser-sync','pug','less','js'], function() {
   gulp.watch('src/js/*.js', ['js']); // Наблюдение за JS файлами в папке js
   gulp.watch('src/img/*', ['img']); // Наблюдение за JS файлами в папке js
 });
+
+// Проверка существования файла
+function fileExist(path) {
+  const fs = require('fs');
+  try {
+    fs.statSync(path);
+  } catch(err) {
+    return !(err && err.code === 'ENOENT');
+  }
+}

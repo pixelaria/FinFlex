@@ -346,14 +346,30 @@ h1,h2,h3,h4,p {
   background-position: center;
   background-size: contain;
   
+  border: none !important;
+  text-decoration: none;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill:#8b8b8b;
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    svg {
+      fill:#fb8931;
+    }
+  }
 
   &--vk {
-    background-image: url('../img/icon-vk.png');
+    
+  }
+  &--youtube {
+    
   }
 
-  &--youtube {
-    background-image: url('../img/icon-youtube.png');
-  }
+
 }
 
 .nav {
@@ -591,12 +607,12 @@ h1,h2,h3,h4,p {
     &:last-child {
       margin-right: 0;
     }
-
-    &--youtube {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-
+    
+    border-bottom: 1px solid;
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+    &:hover {
+      border-color: transparent;
     }
 
     @media @tablet {
@@ -691,7 +707,7 @@ h1,h2,h3,h4,p {
     
     @media @desktop {
       animation-name: change;
-      animation-duration: 10s;
+      animation-duration: 20s;
       animation-iteration-count: infinite;
     }
   }
@@ -2793,10 +2809,14 @@ h1,h2,h3,h4,p {
     margin-bottom: 15px;
     
     @media @tablet {
-      padding-top: 30px;
+      margin-bottom: 0;
       order:3;
       width: 45%;
       margin-left: 5%;
+      
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
     @media @desktop {
       width: 45%;
@@ -2965,6 +2985,7 @@ h1,h2,h3,h4,p {
       position: absolute;
       border-radius: 50%;
       left: 0;
+      top: 0;
     }
     &:after {
       background-image: linear-gradient(251deg, #f46e34 0%, #ff9a2f 100%);
@@ -3101,6 +3122,7 @@ h1,h2,h3,h4,p {
   }
 }
 
+
 .gallery {
 
   @media @tablet {
@@ -3132,8 +3154,8 @@ h1,h2,h3,h4,p {
       }
     }
     @media @desktop {
-      width: unset;
-      min-width: unset;
+      width: auto;
+      min-width: auto;
       &:after {
         content: none;
       }
@@ -3159,6 +3181,14 @@ h1,h2,h3,h4,p {
     }
   }
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .gallery__img {
+    top:0;
+    left:0;
+  }
+}
+
 
 .terms {
   &__item {
@@ -3293,9 +3323,11 @@ h1,h2,h3,h4,p {
   &__car {
     display: none;
     position: absolute;
-    top: -20px;
-    width: 65px;
-    height: 25px;
+    
+    top: -30px;
+    width: 40px;
+    height: 40px;
+
     background-image: url('../img/car.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -3304,6 +3336,12 @@ h1,h2,h3,h4,p {
     animation-name: wheels;
     animation-duration: 20s;
     animation-iteration-count: infinite;
+
+    @media @tablet {
+      top: -61px;
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 
