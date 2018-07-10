@@ -2817,6 +2817,8 @@ h1,h2,h3,h4,p {
   &__photo {
     margin-bottom: 15px;
     
+    position: relative;
+    
     @media @tablet {
       margin-bottom: 0;
       order:3;
@@ -2867,6 +2869,34 @@ h1,h2,h3,h4,p {
     width: 150px;
     text-align: left;
     margin-left: 15px;
+  }
+}
+
+.slider {
+  width: 100%;
+  
+  &__item {
+    
+    &:after {
+      //content: '';
+      display: block;
+      padding-bottom: 75%;
+
+      @media @desktop {
+        padding-bottom: 75%;
+      }
+    }
+  }
+  
+  &__img {
+    //position: absolute;
+    
+    top: 0;
+    bottom:0 ;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    
   }
 }
 
@@ -3377,3 +3407,15 @@ h1,h2,h3,h4,p {
 }
 
 
+
+/* lightslider overrides */
+
+.lSSlideOuter .lSPager.lSGallery li {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 14px rgba(243, 243, 243, 0.5);
+}
+/*
+.lSPager  {
+  position: absolute;
+  width: 75% !important;
+}
+*/

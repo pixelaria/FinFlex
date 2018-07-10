@@ -89,4 +89,12 @@ $(function (){
       map.geoObjects.add(placemark);
     }); 
   }
+
+  $('.slider').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: false,
+    slideMargin: 0,
+    thumbItem: 5
+  });
 });
