@@ -121,43 +121,58 @@
             </div>
             <div class="section__part calc">
               <div class="calc__fields">
-                <div class="calc__field calc__field--90 input-group">
+                <div class="calc__field input-group">
                   <label class="input-group__label">Вид продукции: </label>
                   <div class="select">
-                    <input class="select__input" name="name" type="hidden"/>
-                    <div class="select__placeholder">Полиэтиленовая плёнка</div>
+                    <input class="select__input" name="type" type="hidden">
+                    <div class="select__placeholder">Полиэтиленовая пленка</div>
                     <div class="select__items">
-                      <div class="select__item" data-value="Полиэтиленовая плёнка">Полиэтиленовая плёнка</div>
-                      <div class="select__item" data-value="Полиэтиленовая плёнка">Полиэтиленовая плёнка</div>
-                      <div class="select__item" data-value="Полиэтиленовая плёнка">Полиэтиленовая плёнка</div>
+                      <div class="select__item" data-value="Полиэтиленовая пленка" data-group="1">Полиэтиленовая пленка</div>
+                      <div class="select__item" data-value="Мешки, пакеты" data-group="2">Мешки, пакеты</div>
                     </div>
                   </div>
                 </div>
-                <div class="calc__field calc__field--90 input-group">
-                  <label class="input-group__label">Вид пленки: </label>
-                  <div class="select">
-                    <input class="select__input" name="name" type="hidden"/>
-                    <div class="select__placeholder">Термоусадочная плёнка</div>
-                    <div class="select__items">
-                      <div class="select__item" data-value="Термоусадочная плёнка">Термоусадочная плёнка</div>
-                      <div class="select__item" data-value="Термоусадочная плёнка">Термоусадочная плёнка</div>
-                      <div class="select__item" data-value="Термоусадочная плёнка">Термоусадочная плёнка</div>
+                <div class="calc__group" data-group="1">
+                  <div class="calc__field input-group">
+                    <label class="input-group__label">Вид пленки: </label>
+                    <div class="select">
+                      <input class="select__input" name="type" type="hidden">
+                      <div class="select__placeholder">Упаковочная пленка</div>
+                      <div class="select__items">
+                        <div class="select__item" data-value="Упаковочная пленка, ПВД">Упаковочная пленка, ПВД</div>
+                        <div class="select__item" data-value="Упаковочная пленка, ПНД">Упаковочная пленка, ПНД</div>
+                        <div class="select__item" data-value="Термоусадочная пленка">Термоусадочная пленка</div>
+                        <div class="select__item" data-value="Пленка с флексопечатью">Пленка с флексопечатью</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="calc__field calc__field--75 input-group">
-                  <label class="input-group__label">Тип пленки: </label>
-                  <div class="radio">
-                    <input class="radio__input" name="name" type="hidden"/>
-                    <div class="radio__items">
-                      <div class="radio__item" data-value="Полурукав">Полурукав</div>
-                      <div class="radio__item" data-value="Рукав">Рукав</div>
-                      <div class="radio__item" data-value="Полотно">Полотно</div>
+                <div class="calc__group" data-group="2">
+                  <div class="calc__field input-group" data-parent="group">
+                    <label class="input-group__label">Вид материала: </label>
+                    <div class="select">
+                      <input class="select__input" name="name" type="hidden"/>
+                      <div class="select__placeholder">В рулоне с перфорацией</div>
+                      <div class="select__items">
+                        <div class="select__item" data-value="В рулоне с перфорацией">В рулоне с перфорацией</div>
+                        <div class="select__item" data-value="В пластах">В пластах</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calc__field calc__field--75 input-group">
+                    <label class="input-group__label">Вид материала: </label>
+                    <div class="select">
+                      <input class="select__input" name="name" type="hidden"/>
+                      <div class="select__placeholder">ПВД</div>
+                      <div class="select__items">
+                        <div class="select__item" data-value="ПВД">ПВД</div>
+                        <div class="select__item" data-value="ПНД">ПНД</div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="calc__field input-group input-group--start">
-                  <label class="input-group__label">Длина, Ширина, Толщина: </label>
+                  <label class="input-group__label">Объем, Ширина, Толщина: </label>
                   <div class="input-group__group">
                     <div class="input-group__box">
                       <input class="input-group__input">

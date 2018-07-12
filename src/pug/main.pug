@@ -36,17 +36,34 @@ body.body.body--main
               p.section__text.section__text--white.section__text--line У нас нет прайса, потому что мы работаем на заказ, делая именно ту упаковку, которая нужна каждому из наших клиентов
             .section__part.calc
               .calc__fields
-                .calc__field.calc__field--90.input-group
+                .calc__field.input-group
                   label.input-group__label Вид продукции: 
-                  +select('name','Полиэтиленовая плёнка','Полиэтиленовая плёнка','Полиэтиленовая плёнка')
-                .calc__field.calc__field--90.input-group
-                  label.input-group__label Вид пленки: 
-                  +select('name','Термоусадочная плёнка','Термоусадочная плёнка','Термоусадочная плёнка')
-                .calc__field.calc__field--75.input-group
-                  label.input-group__label Тип пленки: 
-                  +radio('name','Полурукав','Рукав','Полотно')
+                  .select
+                    input.select__input(name='type' type='hidden')
+                    .select__placeholder Полиэтиленовая пленка
+                    .select__items
+                      .select__item(data-value='Полиэтиленовая пленка' data-group='1') Полиэтиленовая пленка
+                      .select__item(data-value='Мешки, пакеты' data-group='2') Мешки, пакеты
+                .calc__group(data-group='1')
+                  .calc__field.input-group
+                    label.input-group__label Вид пленки: 
+                    .select
+                      input.select__input(name='type' type='hidden')
+                      .select__placeholder Упаковочная пленка
+                      .select__items
+                        .select__item(data-value='Упаковочная пленка, ПВД' ) Упаковочная пленка, ПВД
+                        .select__item(data-value='Упаковочная пленка, ПНД' ) Упаковочная пленка, ПНД
+                        .select__item(data-value='Термоусадочная пленка' ) Термоусадочная пленка
+                        .select__item(data-value='Пленка с флексопечатью' ) Пленка с флексопечатью
+                .calc__group(data-group='2')
+                  .calc__field.input-group(data-parent="group")
+                    label.input-group__label Вид материала: 
+                    +select('name','В рулоне с перфорацией','В пластах')
+                  .calc__field.calc__field--75.input-group
+                    label.input-group__label Вид материала: 
+                    +select('name','ПВД','ПНД')
                 .calc__field.input-group.input-group--start
-                  label.input-group__label Длина, Ширина, Толщина: 
+                  label.input-group__label Объем, Ширина, Толщина: 
                   .input-group__group
                     .input-group__box
                       input.input-group__input
@@ -57,7 +74,6 @@ body.body.body--main
                     .input-group__box
                       input.input-group__input
                       .input-group__desc мм
-
               .calc__fields.calc__fields--info
                 .calc__field.input-group
                   input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
