@@ -124,25 +124,37 @@
                 <div class="calc__field input-group">
                   <label class="input-group__label">Вид продукции: </label>
                   <div class="select">
-                    <input class="select__input" name="type" type="hidden">
+                    <input class="select__input select__input--group" name="type" type="hidden">
                     <div class="select__placeholder">Полиэтиленовая пленка</div>
                     <div class="select__items">
-                      <div class="select__item" data-value="Полиэтиленовая пленка" data-group="1">Полиэтиленовая пленка</div>
-                      <div class="select__item" data-value="Мешки, пакеты" data-group="2">Мешки, пакеты</div>
+                      <div class="select__item" data-text="Полиэтиленовая пленка" data-value="Полиэтиленовая пленка" data-param="1">Полиэтиленовая пленка</div>
+                      <div class="select__item" data-text="Мешки, пакеты" data-value="Мешки, пакеты" data-param="2">Мешки, пакеты</div>
                     </div>
                   </div>
                 </div>
-                <div class="calc__group" data-group="1">
+                <div class="calc__group calc__group--active" data-group="1">
                   <div class="calc__field input-group">
                     <label class="input-group__label">Вид пленки: </label>
                     <div class="select">
-                      <input class="select__input" name="type" type="hidden">
+                      <input class="select__input select__input--dep" name="type" type="hidden" data-dep="1">
                       <div class="select__placeholder">Упаковочная пленка</div>
                       <div class="select__items">
-                        <div class="select__item" data-value="Упаковочная пленка, ПВД">Упаковочная пленка, ПВД</div>
-                        <div class="select__item" data-value="Упаковочная пленка, ПНД">Упаковочная пленка, ПНД</div>
-                        <div class="select__item" data-value="Термоусадочная пленка">Термоусадочная пленка</div>
-                        <div class="select__item" data-value="Пленка с флексопечатью">Пленка с флексопечатью</div>
+                        <div class="select__item" data-text="Упаковочная пленка, ПВД" data-value="Упаковочная пленка, ПВД">Упаковочная пленка, ПВД</div>
+                        <div class="select__item" data-text="Упаковочная пленка, ПНД" data-value="Упаковочная пленка, ПНД">Упаковочная пленка, ПНД</div>
+                        <div class="select__item" data-text="Термоусадочная пленка" data-value="Термоусадочная пленка">Термоусадочная пленка</div>
+                        <div class="select__item" data-text="Пленка с флексопечатью" data-value="Пленка с флексопечатью" data-param="true">Пленка с флексопечатью</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calc__field calc__field--dep calc__field--hide input-group" data-dep="1">
+                    <label class="input-group__label">Количество цветов: </label>
+                    <div class="radio">
+                      <input class="radio__input" name="name" type="hidden"/>
+                      <div class="radio__items">
+                        <div class="radio__item" data-value="1">1</div>
+                        <div class="radio__item" data-value="2">2</div>
+                        <div class="radio__item" data-value="3">3</div>
+                        <div class="radio__item" data-value="4">4</div>
                       </div>
                     </div>
                   </div>
@@ -154,8 +166,8 @@
                       <input class="select__input" name="name" type="hidden"/>
                       <div class="select__placeholder">В рулоне с перфорацией</div>
                       <div class="select__items">
-                        <div class="select__item" data-value="В рулоне с перфорацией">В рулоне с перфорацией</div>
-                        <div class="select__item" data-value="В пластах">В пластах</div>
+                        <div class="select__item" data-text="В рулоне с перфорацией" data-value="В рулоне с перфорацией">В рулоне с перфорацией</div>
+                        <div class="select__item" data-text="В пластах" data-value="В пластах">В пластах</div>
                       </div>
                     </div>
                   </div>
@@ -165,8 +177,8 @@
                       <input class="select__input" name="name" type="hidden"/>
                       <div class="select__placeholder">ПВД</div>
                       <div class="select__items">
-                        <div class="select__item" data-value="ПВД">ПВД</div>
-                        <div class="select__item" data-value="ПНД">ПНД</div>
+                        <div class="select__item" data-text="ПВД" data-value="ПВД">ПВД</div>
+                        <div class="select__item" data-text="ПНД" data-value="ПНД">ПНД</div>
                       </div>
                     </div>
                   </div>
@@ -175,15 +187,15 @@
                   <label class="input-group__label">Объем, Ширина, Толщина: </label>
                   <div class="input-group__group">
                     <div class="input-group__box">
-                      <input class="input-group__input">
-                      <div class="input-group__desc">м</div>
+                      <input class="input-group__input im--number">
+                      <div class="input-group__desc">кг</div>
                     </div>
                     <div class="input-group__box">
-                      <input class="input-group__input">
+                      <input class="input-group__input im--number" data-min="50" data-max="17000">
                       <div class="input-group__desc">мм</div>
                     </div>
                     <div class="input-group__box">
-                      <input class="input-group__input">
+                      <input class="input-group__input im--number" data-min="0.2" data-max="6">
                       <div class="input-group__desc">мм</div>
                     </div>
                   </div>

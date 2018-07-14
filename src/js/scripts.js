@@ -1,3 +1,39 @@
+var Calc;
+Calc = {
+  init:function() {
+    console.log('init calc');
+
+    Calc.$calc = $('.calc');
+
+    $('.select__input--group').change(function(e){
+      console.log('select__input--group changed');
+      var group = $(this).data('param');
+      console.log(group);
+      Calc.$calc.find('.calc__group').removeClass('calc__group--active');
+      Calc.$calc.find('.calc__group[data-group="'+group+'"]').addClass('calc__group--active');
+    });
+
+    $('.select__input--dep').change(function(e){
+      console.log('select__input--group changed');
+      var param = $(this).data('param');
+      var dep= $(this).data('dep');
+      
+      console.log('.calc__field--dep[data-dep="'+dep+'"]');
+      console.log('param:'+param);
+      var $field = $('.calc__field--dep[data-dep="'+dep+'"]');
+      
+      
+      if (param) {
+        $field.removeClass('calc__field--hide');
+      } else {
+        $field.addClass('calc__field--hide');
+      }
+    });
+  }
+};
+
+
+
 $(function (){
   console.log('init');
   
@@ -8,16 +44,24 @@ $(function (){
   $('.select__item').click(function(e){
     console.log('select__item');
     
-    var val = $(this).data('value');
-    var text = $(this).html();
-    
+    var val = $(this).data('value'),
+        text = $(this).data('text'),
+        param = $(this).data('param');
     var $select = $(this).closest('.select');
     var $input = $select.find('.select__input');
     var $placehoder = $select.find('.select__placeholder');
 
-    $input.val(val);
     $placehoder.html(text);
     $select.removeClass('select--active');
+    
+    $input.val(val);
+    
+    if (param) {
+      $input.data('param',param);
+    } else {
+      $input.removeData('param');
+    }
+    $input.trigger('change');
   });
 
   $('.radio__item').click(function(e){
@@ -97,4 +141,12 @@ $(function (){
     slideMargin: 0,
     thumbItem: 5
   });
+
+  if ($('.calc').length) {
+    Calc.init();
+  }
 });
+
+
+
+

@@ -1623,6 +1623,10 @@ h1,h2,h3,h4,p {
   }
 
   &__field {
+    &--hide {
+      display: none !important;
+    }
+
     @media @tablet {
       &--90 {
         width: 90%;
@@ -1667,12 +1671,22 @@ h1,h2,h3,h4,p {
     min-width: 570px;
     padding: 50px;
   }
+
+  &__group {
+    display: none; 
+
+    &--active {
+      display: block;
+    }
+  }
+
+
 }
 
 .select {
   position: relative;
   margin-bottom: 20px;
-  
+  width: 100%;
 
   &--active {
     .select__items {
@@ -1852,6 +1866,7 @@ h1,h2,h3,h4,p {
       margin-bottom: 0;
     }
   }
+
   &__box {
     margin-right: 20px;
     max-width: 65px;

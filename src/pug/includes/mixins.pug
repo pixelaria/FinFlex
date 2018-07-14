@@ -5,7 +5,7 @@ mixin select(name, ...items)
     .select__placeholder= items[0]
     .select__items
       each item in items
-        .select__item(data-value=item )= item
+        .select__item(data-text=item data-value=item )= item
       
 //- Declaration
 mixin radio(name, ...items)

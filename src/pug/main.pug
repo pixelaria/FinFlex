@@ -39,22 +39,25 @@ body.body.body--main
                 .calc__field.input-group
                   label.input-group__label Вид продукции: 
                   .select
-                    input.select__input(name='type' type='hidden')
+                    input.select__input.select__input--group(name='type' type='hidden')
                     .select__placeholder Полиэтиленовая пленка
                     .select__items
-                      .select__item(data-value='Полиэтиленовая пленка' data-group='1') Полиэтиленовая пленка
-                      .select__item(data-value='Мешки, пакеты' data-group='2') Мешки, пакеты
-                .calc__group(data-group='1')
+                      .select__item(data-text='Полиэтиленовая пленка' data-value='Полиэтиленовая пленка' data-param='1') Полиэтиленовая пленка
+                      .select__item(data-text='Мешки, пакеты' data-value='Мешки, пакеты' data-param='2') Мешки, пакеты
+                .calc__group.calc__group--active(data-group='1')
                   .calc__field.input-group
                     label.input-group__label Вид пленки: 
                     .select
-                      input.select__input(name='type' type='hidden')
+                      input.select__input.select__input--dep(name='type' type='hidden' data-dep='1')
                       .select__placeholder Упаковочная пленка
                       .select__items
-                        .select__item(data-value='Упаковочная пленка, ПВД' ) Упаковочная пленка, ПВД
-                        .select__item(data-value='Упаковочная пленка, ПНД' ) Упаковочная пленка, ПНД
-                        .select__item(data-value='Термоусадочная пленка' ) Термоусадочная пленка
-                        .select__item(data-value='Пленка с флексопечатью' ) Пленка с флексопечатью
+                        .select__item(data-text='Упаковочная пленка, ПВД' data-value='Упаковочная пленка, ПВД') Упаковочная пленка, ПВД
+                        .select__item(data-text='Упаковочная пленка, ПНД' data-value='Упаковочная пленка, ПНД') Упаковочная пленка, ПНД
+                        .select__item(data-text='Термоусадочная пленка' data-value='Термоусадочная пленка') Термоусадочная пленка
+                        .select__item(data-text='Пленка с флексопечатью' data-value='Пленка с флексопечатью' data-param='true') Пленка с флексопечатью
+                  .calc__field.calc__field--dep.calc__field--hide.input-group(data-dep='1')
+                    label.input-group__label Количество цветов: 
+                    +radio('name','1','2','3','4')
                 .calc__group(data-group='2')
                   .calc__field.input-group(data-parent="group")
                     label.input-group__label Вид материала: 
@@ -66,13 +69,13 @@ body.body.body--main
                   label.input-group__label Объем, Ширина, Толщина: 
                   .input-group__group
                     .input-group__box
-                      input.input-group__input
-                      .input-group__desc м
+                      input.input-group__input.im--number
+                      .input-group__desc кг
                     .input-group__box
-                      input.input-group__input
+                      input.input-group__input.im--number(data-min='50' data-max='17000')
                       .input-group__desc мм
                     .input-group__box
-                      input.input-group__input
+                      input.input-group__input.im--number(data-min='0.2' data-max='6')
                       .input-group__desc мм
               .calc__fields.calc__fields--info
                 .calc__field.input-group
