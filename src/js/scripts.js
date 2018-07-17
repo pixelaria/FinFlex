@@ -174,7 +174,7 @@ $(function (){
     e.stopPropagation();
   });
 
-  $('body').delegate('.popup__close', 'click', function(e) {
+  $('body').delegate('.popup__closer', 'click', function(e) {
     var $popup = $(this).closest('.popup');
     
     $('body').removeClass('body--noscroll');
