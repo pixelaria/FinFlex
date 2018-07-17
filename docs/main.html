@@ -42,6 +42,29 @@
       </div>
     </nav>
   </aside>
+  <div class="popup popup--active" id="callback">
+    <form class="popup__form" name="form-callback" action="" id="form-callback">
+      <div class="popup__close"></div>
+      <div class="popup__header">
+        <p class="popup__title">Заказ консультации</p>
+        <p class="popup__subtitle">Наш сотрудник свяжется с вами в ближайшее время</p>
+      </div>
+      <div class="popup__body">
+        <div class="popup__fields">
+          <div class="calc__field input-group">
+            <input class="input-group__input input-group__input--name" name="name" placeholder="Ваше имя">
+            <input class="input-group__input im--phone input-group__input--phone" name="phone" placeholder="Телефон">
+          </div>
+          <div class="calc__field input-group">
+            <textarea class="input-group__input input-group__input--text" name="comment" placeholder="Введите ваш вопрос или оставьте это поле пустым" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="popup__buttons">
+          <button class="popup__btn btn btn--orange feedback" value="Перезвонить">Перезвонить  </button>
+        </div>
+      </div>
+    </form>
+  </div>
   <div class="wrapper" id="panel">
     <header class="header">
       <div class="container header__items"> <a class="header__item header__item--logo logo" href="main.html">Финфлекс</a>
