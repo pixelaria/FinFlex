@@ -28,6 +28,13 @@ body {
       display: block;
     }
   }
+  &--noscroll {
+    overflow: hidden;
+
+    @media (min-device-width: 1025px) {
+      padding-right: 15px;
+    }
+  }
 }
 
 .main {
@@ -1862,13 +1869,13 @@ h1,h2,h3,h4,p {
       margin-bottom: 0;
 
       &--name {
-        width: 270px;
-        min-width: 270px;
+        width: 250px;
+        min-width: 250px;
       }
 
       &--phone {
-        width: 180px;
-        min-width: 180px;
+        width: 200px;
+        min-width: 200px;
       }
     }
   }
@@ -3542,27 +3549,10 @@ h1,h2,h3,h4,p {
     overflow: hidden;
   }
   
-  &__close {
+  &__closer {
     position: absolute;
     right: 20px;
     top: 20px;
-    width: 15px;
-    height: 15px;
-    background-image: url('../img/icon-close.png');
-    background-position: center;
-    background-size: contain;
-    
-    cursor: pointer;
-    transition:transform 0.3s ease;
-
-    &:hover {
-      transform: rotateZ(180deg);
-    }
-
-    &--form {
-      right: 10px;
-      top: 10px;
-    }
   }
 
   &__title {
@@ -3595,4 +3585,30 @@ h1,h2,h3,h4,p {
     margin-right: auto;
   }
 
+}
+
+.closer {
+  width:15px;
+  height:15px;
+  display:block;
+  float:right;
+  position:relative;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  border-radius:2px;
+  transition: transform .3s ease-out;
+  cursor:pointer;
+
+ 
+  background-image: url('../img/icon-close.png');
+  background-position: center;
+  background-size: contain;
+  
+  cursor: pointer;
+  transition:transform 0.3s ease;
+
+  &:hover {
+    transform: rotateZ(180deg);
+  }
 }

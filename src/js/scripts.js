@@ -145,6 +145,47 @@ $(function (){
   if ($('.calc').length) {
     Calc.init();
   }
+
+  $('.im--phone').mask('+7 (000) 000-00-00');
+
+  // Popup callbacks
+  $('body').delegate('*[data-event="popup"]', 'click', function(e) {
+    console.log('popup event');
+    var popup = $(this).data('popup');
+    if (popup) {
+      $('body').addClass('body--noscroll');
+      $('#'+popup).addClass('popup--active');
+    }
+    return false;
+  });
+
+  $('body').click(function(e) {
+    var $popup = $('.popup--active');
+    if ($popup.length) {
+      $('body').removeClass('body--noscroll');
+      $popup.removeClass('popup--active');
+      if ($popup.hasClass('popup--remove')) {
+        $popup.remove();
+      }
+    }
+  });
+
+  $('body').delegate('.popup__form', 'click', function(e) {
+    e.stopPropagation();
+  });
+
+  $('body').delegate('.popup__close', 'click', function(e) {
+    var $popup = $(this).closest('.popup');
+    
+    $('body').removeClass('body--noscroll');
+    $popup.removeClass('popup--active');
+    
+    if ($(this).hasClass('popup__close--remove')) {
+      $popup.remove();
+    }
+    return false;
+  });
+  
 });
 
 
