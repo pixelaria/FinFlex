@@ -46,12 +46,13 @@
     <form class="popup__form" name="form-callback" action="" id="form-callback">
       <div class="popup__closer closer"></div>
       <div class="popup__header">
-        <p class="popup__title">Заказ консультации</p>
+        <p class="popup__title">Консультация специалиста</p>
         <p class="popup__subtitle">Наш сотрудник свяжется с вами в ближайшее время</p>
       </div>
       <div class="popup__body">
         <div class="popup__fields">
           <div class="calc__field input-group">
+            <input class="popup__action" type="hidden" name="action">
             <input class="input-group__input input-group__input--name" name="name" placeholder="Ваше имя">
             <input class="input-group__input im--phone input-group__input--phone" name="phone" placeholder="Телефон">
           </div>
@@ -257,7 +258,7 @@
               <div class="advantages__title advantages__title--stars">Заботимся о качестве</div>
               <div class="advantages__text">Вся продукция производится на современном оборудовании и имеет необходимые сертификаты</div>
             </div>
-          </div><a class="btn btn--orange" data-event="popup" data-popup="callback">Заказать консультацию</a>
+          </div><a class="btn btn--orange" data-event="popup" data-popup="callback" data-title="Консультация специалиста" data-btn="Заказать">Заказать консультацию</a>
         </div>
       </section>
       <section class="section section--news section--white">

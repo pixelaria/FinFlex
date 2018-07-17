@@ -151,10 +151,18 @@ $(function (){
   // Popup callbacks
   $('body').delegate('*[data-event="popup"]', 'click', function(e) {
     console.log('popup event');
-    var popup = $(this).data('popup');
+    var popup = $(this).data('popup'),
+        title = $(this).data('title'),
+        btn = $(this).data('btn');
+    
     if (popup) {
+      var $popup = $('#'+popup)
+      $popup.find('.popup__title').html(title);
+      $popup.find('.popup__action').val(title);
+      if (btn) $popup.find('.popup__btn').html(btn);
+      
+      $popup.addClass('popup--active');
       $('body').addClass('body--noscroll');
-      $('#'+popup).addClass('popup--active');
     }
     return false;
   });

@@ -2,11 +2,12 @@
   form.popup__form(name='form-callback' action='' id='form-callback')
     .popup__closer.closer
     .popup__header
-      p.popup__title Заказ консультации
+      p.popup__title Консультация специалиста
       p.popup__subtitle Наш сотрудник свяжется с вами в ближайшее время
     .popup__body
       .popup__fields
         .calc__field.input-group
+          input.popup__action(type="hidden" name="action")
           input.input-group__input.input-group__input--name(name="name" placeholder="Ваше имя")
           input.input-group__input.im--phone.input-group__input--phone(name="phone" placeholder="Телефон")
         .calc__field.input-group
