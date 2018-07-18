@@ -8,12 +8,16 @@ Calc = {
     $('.select__input--group').change(function(e){
       console.log('select__input--group changed');
       var group = $(this).data('param');
-      console.log(group);
       
-      Calc.$calc.find('.calc__group').removeClass('calc__group--active');
-      Calc.$calc.find('.calc__group[data-group="'+group+'"]').addClass('calc__group--active');
+      var $group_new = Calc.$calc.find('.calc__group[data-group="'+group+'"]');
+      var $group_old = Calc.$calc.find('.calc__group--active');
 
-      //нужно очистить значения текущей группы и дать значенгия по умолчанию второй группе
+      $group_old.find('input').val('');
+      $group_old.removeClass('calc__group--active');
+      
+      $group_new.addClass('calc__group--active');
+      $group_new.find('.select__item:first-child').trigger('click');
+      
     });
 
     $('.select__input--dep').change(function(e){
@@ -22,25 +26,28 @@ Calc = {
       var dep= $(this).data('dep');
       
       console.log('.calc__field--dep[data-dep="'+dep+'"]');
-      console.log('param:'+param);
       var $field = $('.calc__field--dep[data-dep="'+dep+'"]');
       
       
       if (param) {
         $field.removeClass('calc__field--hide');
       } else {
-        $field.addClass('calc__field--hide');
+        $field.addClass('calc__field--hide'); 
+        $field.find('input').val('');
       }
     });
 
-    $('.select__item:first-child').trigger('click');
+    if ($('.calc--main').length)
+      $('.select--group .select__item:first-child').trigger('click'); 
+    else 
+      $('.select__item:first-child').trigger('click'); 
   }
 };
 
 
 
 $(function (){
-  console.log('init');
+  console.log('init 1.1');
   
   $('.select__placeholder').click(function(e){
     $(this).parent().toggleClass('select--active');
