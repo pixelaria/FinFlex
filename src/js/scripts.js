@@ -9,8 +9,11 @@ Calc = {
       console.log('select__input--group changed');
       var group = $(this).data('param');
       console.log(group);
+      
       Calc.$calc.find('.calc__group').removeClass('calc__group--active');
       Calc.$calc.find('.calc__group[data-group="'+group+'"]').addClass('calc__group--active');
+
+      //нужно очистить значения текущей группы и дать значенгия по умолчанию второй группе
     });
 
     $('.select__input--dep').change(function(e){
@@ -29,6 +32,8 @@ Calc = {
         $field.addClass('calc__field--hide');
       }
     });
+
+    $('.select__item:first-child').trigger('click');
   }
 };
 
@@ -64,8 +69,9 @@ $(function (){
     $input.trigger('change');
   });
 
+
   $('.radio__item').click(function(e){
-    console.log('select__item');
+    console.log('radio__item');
     
     var val = $(this).data('value');
     var text = $(this).html();
@@ -147,6 +153,7 @@ $(function (){
   }
 
   $('.im--phone').mask('+7 (000) 000-00-00');
+  $('.im--number').mask('0#');
 
   // Popup callbacks
   $('body').delegate('*[data-event="popup"]', 'click', function(e) {
