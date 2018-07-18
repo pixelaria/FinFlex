@@ -2119,7 +2119,8 @@ h1,h2,h3,h4,p {
 .news-list {
   margin-left: -20px;
   margin-right: -20px;
-  
+  margin-bottom: 60px;
+
   @media @tablet {
     display: flex;
     flex-direction: row;
@@ -3616,5 +3617,34 @@ h1,h2,h3,h4,p {
 
   &:hover {
     transform: rotateZ(180deg);
+  }
+}
+
+
+.pagination {
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--current {
+      color:lighten(#5b5b5b,30%);
+    }
+  }
+
+  &__link {
+    
+    text-decoration: none;
+    color: #5b5b5b;
+    &:hover {
+      color:#fe9530;
+    }
   }
 }

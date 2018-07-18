@@ -124,7 +124,7 @@ $(function (){
           
           
           iconLayout: 'default#image',
-          iconImageHref: 'img/icon-pin-map.png',
+          iconImageHref: '/wp-content/themes/pixelaria/img/icon-pin-map.png',
           iconImageSize: [40, 51]
         
         });
