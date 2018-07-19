@@ -123,11 +123,11 @@ $(function (){
 
       map = new ymaps.Map("map", {
           center: [59.670684, 29.903532],
-          zoom: 13,
+          zoom: 14,
           controls: []
       });
       placemark=new ymaps.Placemark(
-        [59.670684, 29.903532],
+        [59.66880, 29.908552],
         {
           balloonContent:"Производство",
           balloonContentHeader:"Производство",
